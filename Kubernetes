@@ -50,4 +50,8 @@ Scaling down - is the process of decreasing the number of replicas, which can be
                to handle the workload. For example, if a deployment is currently running four replicas of a Pod and the traffic decreases, scaling down to 
                two replicas may help to conserve resources and reduce costs.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-           
+Zero downtime - Ability to Deploy new versions of an application or update it without interrupting the service to end-users. 
+                It means that the deployment process is done seamlessly and without any noticeable effect on the user experience.
+                In Kubernetes, this is achieved by using rolling updates, which means deploying new versions of an application in a controlled manner. 
+                Kubernetes creates new pods with the updated version of the application and gradually replaces the old ones    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
