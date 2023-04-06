@@ -1,0 +1,53 @@
+Config file in kubernetes
+       In Kubernetes, a config file (short for configuration file) is a YAML or JSON file that describes the desired state of a Kubernetes object, such as a Deployment,
+       Service, or Pod.
+       The config file specifies the object's properties, such as the number of replicas, the container image to use, the container ports to expose, the volume mounts 
+       to use, and other configuration options.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+METADATA - In Kubernetes, metadata is information that describes a Kubernetes object, such as a Deployment, Service, Pod, or ConfigMap. Metadata is defined in 
+           the object's YAML or JSON configuration file and provides important details about the object, such as its name, namespace, labels, annotations, and creation 
+           timestamp.
+           Here are some examples of the metadata fields commonly used in Kubernetes objects:
+      •	name: The name of the object.
+      •	namespace: The Kubernetes namespace the object belongs to.
+      •	labels: Key-value pairs that can be used to organize and select objects.
+      •	annotations: Key-value pairs that can be used to attach additional metadata to an object.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MaxSurge - is the maximum number of pods that can be created above the desired number of replicas during a rolling update. For example, if the desired number of 
+           replicas is 3, and MaxSurge is set to 2, then during a rolling update, up to 5 pods can be created.
+
+MinSurge - is the minimum number of pods that must be running while the rolling update is in progress. This ensures that there are always enough pods available 
+           to handle incoming requests during the update process. For example, if the desired number of replicas is 3, and MinSurge is set to 1, then during a 
+           rolling update, at least 4 pods will be running at any given time.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------           
+Rollback - is a feature of Kubernetes that allows you to revert a Deployment to a previous revision. If a new version of your application causes issues, you can use 
+           the rollback feature to quickly and easily undo the changes and revert to a previous working version.
+           The rollback feature is available via the kubectl command-line tool or through the Kubernetes API.
+           command $ kubectl rollout undo deployment/<deployment-name> [--to-revision=<revision-number>]
+           
+Rollout -  In Kubernetes, a rollout is the process of updating an application or service to a new version, while minimizing downtime and ensuring that the new version 
+           is working properly. 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------           
+Kubernetes Controllers are used to manage the state of resources in the cluste
+
+ReplicaSet : A ReplicaSet ensures that a specified number of replicas of a Pod are running at any given time. 
+            It replaces the deprecated ReplicationController.
+Deployment : A Deployment is used to manage the rollout and scaling of ReplicaSets, making it easy to update and 
+            roll back to previous versions.
+StatefulSet : A StatefulSet is used to manage stateful applications that require unique identities and persistent storage.
+DaemonSet : A DaemonSet ensures that a specific Pod is running on every node in the cluster, typically for cluster-level 
+            logging or monitoring.
+Job : A Job creates one or more Pods and ensures that they run to completion, typically for batch processing or
+     data processing tasks.
+CronJob : A CronJob creates Jobs on a schedule, typically for running periodic tasks such as backups or data synchronization.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In Kubernetes, scaling up and scaling down refer to increasing or decreasing the number of replicas of a deployment, statefulset, or replica set that are 
+               running in the cluster. Replicas are identical copies of a Pod that run the same application and are managed by the controller.
+Scaling up   - is the process of increasing the number of replicas, which can be useful when there is an increase in traffic or when more resources are required 
+               to handle the workload. For example, if a deployment is currently running two replicas of a Pod and the traffic increases, scaling up to four 
+               replicas may help to handle the increased load.
+Scaling down - is the process of decreasing the number of replicas, which can be useful when there is a decrease in traffic or when fewer resources are required
+               to handle the workload. For example, if a deployment is currently running four replicas of a Pod and the traffic decreases, scaling down to 
+               two replicas may help to conserve resources and reduce costs.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+           
