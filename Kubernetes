@@ -55,3 +55,9 @@ Zero downtime - Ability to Deploy new versions of an application or update it wi
                 In Kubernetes, this is achieved by using rolling updates, which means deploying new versions of an application in a controlled manner. 
                 Kubernetes creates new pods with the updated version of the application and gradually replaces the old ones    
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+StatefulSet  - statefulset is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods,
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DNS SYNTAX   - Kubernetes creates DNS records for Services and Pods. You can contact Services with consistent DNS names instead of IP addresses. 
+               Kubernetes publishes information about Pods and Services which is used to program DNS. Kubelet configures Pods' DNS so that running 
+               containers can lookup Services by name rather than IP.
+               
