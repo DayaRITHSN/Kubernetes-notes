@@ -30,13 +30,18 @@ Rollout -  In Kubernetes, a rollout is the process of updating an application or
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------           
 Kubernetes Controllers are used to manage the state of resources in the cluste
 
-ReplicaSet : A ReplicaSet ensures that a specified number of replicas of a Pod are running at any given time. 
+ReplicaSet - A ReplicaSet ensures that a specified number of replicas of a Pod are running at any given time. 
             It replaces the deprecated ReplicationController.
-Deployment : A Deployment is used to manage the rollout and scaling of ReplicaSets, making it easy to update and 
+Deployment - A Deployment is used to manage the rollout and scaling of ReplicaSets, making it easy to update and 
             roll back to previous versions.
-StatefulSet : A StatefulSet is used to manage stateful applications that require unique identities and persistent storage.
-DaemonSet : A DaemonSet ensures that a specific Pod is running on every node in the cluster, typically for cluster-level 
-            logging or monitoring.
+StatefulSet - A StatefulSet is used to manage stateful applications that require unique identities and persistent storage.
+ReplicaSet vs Replication controller
+	    - Both ensures that at a given point of time the specified number of replicas are always running.
+	    - Replication controller is very old controller now it is replaced by ReplicaSet.
+	    - The only difference between them is Replication controller supports only equality-based selector but ReplicaSet support both set-based and equality based 
+             selector.
+DaemonSet - DaemonSet creates exactly one pod on each and every worker node in the cluster and ensures that all that are always running.
+          - If a new worker node is added or deleted, DaemonSet will also add or delete the pod from the respective worker node.
 Job : A Job creates one or more Pods and ensures that they run to completion, typically for batch processing or
      data processing tasks.
 CronJob : A CronJob creates Jobs on a schedule, typically for running periodic tasks such as backups or data synchronization.
@@ -60,4 +65,29 @@ StatefulSet  - statefulset is the workload API object used to manage stateful ap
 DNS SYNTAX   - Kubernetes creates DNS records for Services and Pods. You can contact Services with consistent DNS names instead of IP addresses. 
                Kubernetes publishes information about Pods and Services which is used to program DNS. Kubelet configures Pods' DNS so that running 
                containers can lookup Services by name rather than IP.
-               
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------               
+Statefull Applications - User session data is saved at the server side.
+	                - if server goes down, it is difficult to transfer the session data to other server. 
+	                - This type of application will not work, if we want to implement autoscaling.	
+Stateless Applications
+	                - user session-data is never saved at the server side.
+	                - using a common authentication gateway / client token method to validate the users once for multiple microservices. 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------                       
+Types of Kubernetes Services
+
+ClusterIP (default) - This is the default type of service in k8S.
+		      - using ClusterIP we can expose the IPs of pods to another set of pods with in the cluster.
+NodePort -  This service is most primitive way to get the external traffic directed to our applications running inside the cluster in pods.
+         -  Automatically a ClusterIP will also be created internally.
+LoadBalancer - A load balancer in Kubernetes is a component that distributes incoming network traffic across multiple replicas of a service.          
+ExternalName - Internal clients use the DNS name of a Service as an alias for an external DNS name.
+Headless  - In Kubernetes, a headless service is a type of service that does not have an automatically assigned IP address or a load balancer.
+          - If we don't need the default loadbalancing capability of services nor the single IP to service we use StatefullSet 
+	   - using Headless service we can get all the target pod ips, if we do nslookup.
+	   - It is created by sepcifying 'none' for ClusterIP
+	   - Headless service is usually used with StatefullSet controller. 
+
+
+
+
+
