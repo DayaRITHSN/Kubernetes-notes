@@ -86,8 +86,12 @@ Headless  - In Kubernetes, a headless service is a type of service that does not
 	   - using Headless service we can get all the target pod ips, if we do nslookup.
 	   - It is created by sepcifying 'none' for ClusterIP
 	   - Headless service is usually used with StatefullSet controller. 
-
-
-
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Autoscaling - It is a feature in which the cluster is capable of increasing the number of nodes as the demand for service response increases and 
+              decrease the number of nodes as the requirement decreases.
+Types of AutoScaling	      
+Horizontal autoscaling - scales the number of pod replicas based on CPU utilization or custom metrics. When a metric exceeds a certain threshold.
+Vertical autoscaling - adjusts the CPU and memory requests and limits for containers based on their actual usage.
+Cluster Autoscaling -  is a Kubernetes component that automatically adjusts the size of a cluster based on the current demand and resource utilization.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
