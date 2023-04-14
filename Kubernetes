@@ -94,4 +94,5 @@ Horizontal autoscaling - scales the number of pod replicas based on CPU utilizat
 Vertical autoscaling - adjusts the CPU and memory requests and limits for containers based on their actual usage.
 Cluster Autoscaling -  is a Kubernetes component that automatically adjusts the size of a cluster based on the current demand and resource utilization.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+CrashLoopBackOff - is a state that can occur when a Kubernetes container repeatedly crashes after starting up. When a container crashes, Kubernetes will try to 
+                   restart it automatically, but if the container continues to fail, it will enter a CrashLoopBackOff state.
