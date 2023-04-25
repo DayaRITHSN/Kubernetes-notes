@@ -96,3 +96,15 @@ Cluster Autoscaling -  is a Kubernetes component that automatically adjusts the 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CrashLoopBackOff - is a state that can occur when a Kubernetes container repeatedly crashes after starting up. When a container crashes, Kubernetes will try to 
                    restart it automatically, but if the container continues to fail, it will enter a CrashLoopBackOff state.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Monolothic and Microservice architecture 
+Monolothic architecture - A monolothic application has a single code base with multiple modules in it.
+		        - It is a single build for entire application.
+		        - To make minor changes to application, we need to re-build and re-deploy the complete application.
+		        - scaling is very challenging.
+Microservice architecture - A microservice application is composed of small (micro) services. 
+		          - Each service will have a different code base.
+		          - Application are divided into as small as possible sub applications called services which are independent to each other which are 
+			     called loosely coupled.	
+		          - Each service can be managed separately and it is deployable separately.
+		- Services need not to share same technology stack or frameworks.
