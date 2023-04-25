@@ -107,4 +107,7 @@ Microservice architecture - A microservice application is composed of small (mic
 		          - Application are divided into as small as possible sub applications called services which are independent to each other which are 
 			     called loosely coupled.	
 		          - Each service can be managed separately and it is deployable separately.
-		- Services need not to share same technology stack or frameworks.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RBAC - RBAC (Role-Based Access Control) is a mechanism in Kubernetes that allows the cluster administrator to control access to Kubernetes resources based on a 
+       user's role within the organization. With RBAC, you can define roles that specify what actions a user can perform on which resources 
+       within the cluster.
